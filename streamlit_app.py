@@ -34,16 +34,12 @@ df['Month'] = df['Date'].dt.month
 # Feature Engineering - Adding Lag & Rolling Features
 df['Prev_Total_Deposits'] = df.groupby('Branch_ID')['Total_Deposits'].shift(1)
 df['Prev_Loan_Approvals'] = df.groupby('Branch_ID')['Loan_Approvals'].shift(1)
-#df['Prev_Revenue_Growth'] = df.groupby('Branch_ID')['Revenue_Growth'].shift(1)
+
 
 # Feature Engineering - difference between the current month and previous month
 df['change_in_deposit'] = df['Total_Deposits'] - df['Prev_Total_Deposits']
 df['change_in_loan_approvals'] = df['Loan_Approvals'] - df['Prev_Loan_Approvals']
 #df['change_in_revenue_growth'] = df['Revenue_Growth'] - df['Prev_Revenue_Growth']
-
-# 3-Month Rolling Features
-#df['Rolling_Deposits_3M'] = df.groupby('Branch_ID')['Total_Deposits'].rolling(3).mean().reset_index(level=0, drop=True)
-#df['Rolling_Loan_Approvals_3M'] = df.groupby('Branch_ID')['Loan_Approvals'].rolling(3).mean().reset_index(level=0, drop=True)
 
 # Interaction Features
 df['Deposits_x_Satisfaction'] = df['Total_Deposits'] * df['Customer_Satisfaction_Score']
@@ -79,6 +75,7 @@ st.write(X_train.head())
 
 #variance
 st.write(X_train.var())
+st.write(X_train.std())
 
 
 # Standard Scaling
