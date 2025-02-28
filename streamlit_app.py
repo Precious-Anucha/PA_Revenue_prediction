@@ -78,7 +78,7 @@ st.write("Training Data After Preprocessing")
 st.write(X_train.head())
 
 #variance
-st.write(X_train.Var())
+st.write(X_train.var())
 
 
 # Standard Scaling
