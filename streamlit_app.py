@@ -62,13 +62,17 @@ features = ['Branch_ID', 'Branch_Name', 'Month', 'Total_Deposits', 'Prev_Total_D
             'Loan_Approvals', 'Prev_Loan_Approvals', 'Deposits_x_Satisfaction', 'Loan_x_Satisfaction', 'Customer_Satisfaction_Score', 'change_in_deposit','change_in_loan_approvals']
 target = 'Revenue_Growth'
 
-st.write(X.corr())
+
 
 
 
 X = df[features]
 y = df[target]
 
+
+#correlation
+st.write("Correlation")
+st.write(X.corr())
 
 # Splitting data into training and testing dataset
 # Time-Based Train-Test Split (instead of random)
