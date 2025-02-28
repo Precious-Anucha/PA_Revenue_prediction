@@ -74,6 +74,7 @@ st.write("Training Data After Preprocessing")
 st.write(X_train.head())
 
 #Standard deviation
+st.write(standard deviation)
 st.write(X_train.std())
 
 # Standard Scaling
