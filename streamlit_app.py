@@ -65,6 +65,8 @@ target = 'Revenue_Growth'
 X = df[features]
 y = df[target]
 
+
+# Splitting data into training and testing dataset
 # Time-Based Train-Test Split (instead of random)
 split_date = df['Date'].quantile(0.8)  # Use 80% for training
 X_train, X_test = X[df['Date'] <= split_date], X[df['Date'] > split_date]
@@ -74,7 +76,7 @@ st.write("Training Data After Preprocessing")
 st.write(X_train.head())
 
 #Standard deviation
-st.write(standard deviation)
+st.write("standard deviation")
 st.write(X_train.std())
 
 # Standard Scaling
