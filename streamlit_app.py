@@ -73,10 +73,8 @@ y_train, y_test = y[df['Date'] <= split_date], y[df['Date'] > split_date]
 st.write("Training Data After Preprocessing")
 st.write(X_train.head())
 
-#variance
-st.write(X_train.var())
+#Standard deviation
 st.write(X_train.std())
-
 
 # Standard Scaling
 scaler = StandardScaler()
